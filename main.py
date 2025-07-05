@@ -426,6 +426,7 @@ async def start(bot, m: Message):
 
     await asyncio.sleep(1)
     if m.chat.id in AUTH_USERS:
+        print(f"User ID is in AUTH_USERS", m.chat.id)
         await start_message.edit_text(
             f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
             f"Great! You are a premium member!\n"
