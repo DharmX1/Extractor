@@ -38,7 +38,8 @@ import aiofiles
 import zipfile
 import shutil
 import ffmpeg
-
+# Configuration
+AUTH_USERS = {1077356338, 2849968443}  # Replace with real Telegram user IDs
 # Initialize the bot
 bot = Client(
     "bot",
@@ -426,7 +427,6 @@ async def start(bot, m: Message):
 
     await asyncio.sleep(1)
     if m.chat.id in AUTH_USERS:
-        print(f"User ID is in AUTH_USERS", m.chat.id)
         await start_message.edit_text(
             f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
             f"Great! You are a premium member!\n"
